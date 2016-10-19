@@ -85,11 +85,8 @@ RUN buildDeps=' \
 VOLUME /data
 
 COPY docker-entrypoint.sh /
-COPY run.sh /
 RUN chmod +x /docker-entrypoint.sh
-RUN chmod +x /run.sh
 ENTRYPOINT ["/docker-entrypoint.sh"]
-#ENTRYPOINT ["/run.sh"]
 
 EXPOSE 5000
 CMD ["rails", "server", "-b", "0.0.0.0"]
